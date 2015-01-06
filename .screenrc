@@ -8,16 +8,18 @@ altscreen on
 hardstatus on
 #caption always "%{= g}%-w%{= rW}%n %t%{-}%+w %-="
 #caption always "%{= kw}%-w%{= BW}%n %t%{-}%+w %-=   | %1` | %2`MB/%3`MB | %m/%d %l:%M %p"
-hardstatus alwayslastline "%{= g}%-w%{= rW}%n %t%{-}%+w %-= %{= kr}%4` %{= ky}%H %{= kb}%1` %{= kB}%2`\%3`MB %{km}%l %{kc}%d%{kw}-%{kc}%m %{kg}%C"
+hardstatus alwayslastline "%{=b kg}%-w%{=b bg}%n %t%{-}%+w %-= %{=b kW}|%{=b ky}%H %{=b kW}| %{=b kB}%2`\%3`MB %{=b kW}| %{km}%l %{=b kW}| %{kc}%d%{kw}-%{kc}%m %{=b kW}| %{kg}%C %{=b kW}|"
+#hardstatus alwayslastline "%{= g}%-w%{= rW}%n %t%{-}%+w %-= %{= kr}%4` %{= ky}%H %{= kb}%1` %{= kB}%2`\%3`MB %{km}%l %{kc}%d%{kw}-%{kc}%m %{kg}%C"
 #hardstatus alwayslastline "%{-b gk}%-w%{+b WR}%50>%n %t%{-b gk}%+w%< %= %{mk}%l %{ck}%d%{wk}-%{ck}%m %{gk}%c"
-backtick 1 60 60 $HOME/bin/get_uptime
+#backtick 1 60 60 $HOME/bin/get_uptime
 backtick 2 60 60 $HOME/bin/get_freemem
 backtick 3 60 60 $HOME/bin/get_freeswap
-backtick 4 120 120 $HOME/bin/get_gmail
+#backtick 4 120 120 $HOME/bin/get_gmail
 backtick 5 60 60 $HOME/bin/get_sessionname
 #hardstatus alwayslastline "%{-b gk}%{+b WR}%50>%n %t%{-b gk}%+w%< %= %{mk}%l %{ck}%d%{wk}-%{ck}%m %{gk}%c"
 attrcolor b ".I"
 termcapinfo xterm 'Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm'
+termcapinfo xterm* ti@:te@
 #termcapinfo xterm* 'hs:ts=\E]0;:fs=\007:ds=\E]0;\007'
 #defhstatus "screen ^E (^Et) | $USER@^EH"
 defbce "on"
@@ -25,13 +27,13 @@ defbce "on"
 #term xterm-256color
 term $TERM
 bind ^- other
-screen -t mixer 0 alsamixer
+screen -t T1  0
+screen -t T2 1
+#screen -t mixer 0 alsamixer
 #screen -t Mail 2 /usr/bin/mutt
-screen -t mocp 1 mocp
-screen -t mcabber 2 mcabber
-screen -t IRC 3 /usr/bin/irssi
-screen -t Term1  4
-screen -t Term2 5
+#screen -t mocp 1 mocp
+#screen -t mcabber 2 mcabber
+#screen -t IRC 3 /usr/bin/irssi
 
 # caption stuff
 # display caption to show informations about windows, load average and time, at any time
